@@ -78,7 +78,8 @@ ENV LANGUAGE=en_US:en
 ENV LC_ALL=en_US.UTF-8
 
 RUN chown -R app:app /config /downloads && \
-  chmod +x /usr/local/bin/healthcheck /usr/bin/mp4box /usr/bin/ffmpeg /usr/bin/ffprobe /usr/bin/deno
+  chmod +x /usr/local/bin/healthcheck /usr/bin/mp4box /usr/bin/ffmpeg /usr/bin/ffprobe /usr/bin/deno \
+  && /opt/python/bin/python -m pip install httpx[socks]
 
 VOLUME /config
 VOLUME /downloads
